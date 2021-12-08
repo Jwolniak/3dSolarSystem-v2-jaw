@@ -53,31 +53,31 @@ const sun = new THREE.Mesh(
 
 const mercuryTexture = new THREE.TextureLoader().load('mercury.jpg');
 const mercury = new THREE.Mesh(
-  new THREE.SphereGeometry(2, 32, 32),
+  new THREE.SphereGeometry(3, 32, 32),
   new THREE.MeshStandardMaterial({map: mercuryTexture})
 );
 
 const venusTexture = new THREE.TextureLoader().load('venus.jpg');
 const venus = new THREE.Mesh(
-  new THREE.SphereGeometry(3, 32, 32),
+  new THREE.SphereGeometry(4, 32, 32),
   new THREE.MeshStandardMaterial({map: venusTexture})
 );
 
 const earthTexture = new THREE.TextureLoader().load('earth.jpg');
 const earth = new THREE.Mesh(
-  new THREE.SphereGeometry(4, 32, 32),
+  new THREE.SphereGeometry(5, 32, 32),
   new THREE.MeshStandardMaterial({map: earthTexture})
 );
 
 const moonTexture = new THREE.TextureLoader().load('moon.jpg');
 const moon = new THREE.Mesh(
-  new THREE.SphereGeometry(3, 32, 32),
+  new THREE.SphereGeometry(4, 32, 32),
   new THREE.MeshStandardMaterial({map: moonTexture})
 );
 
 const marsTexture = new THREE.TextureLoader().load('mars.jpg');
 const mars = new THREE.Mesh(
-  new THREE.SphereGeometry(4, 32, 32),
+  new THREE.SphereGeometry(5, 32, 32),
   new THREE.MeshStandardMaterial({map: marsTexture})
 );
 
@@ -113,8 +113,8 @@ const pluto = new THREE.Mesh(
 
 //adding the different objects to the scene so the user can see them
 scene.add(sun);
-//scene.add(mercury);
-//scene.add(venus);
+scene.add(mercury);
+scene.add(venus);
 //scene.add(earth);
 //scene.add(moon);
 //scene.add(mars);
@@ -125,8 +125,14 @@ scene.add(sun);
 //scene.add(pluto);
 
 //setting object positions to make it appear as the user scrolls
-sun.position.z = 30;
+sun.position.z = 5;
 sun.position.setX(-10);
+
+mercury.position.z = 15;
+mercury.position.setX(-10);
+
+venus.position.z = 25;
+venus.position.setX(-10);
 
 //this function moves the camera so that the object looks as though it is moving while the user scrolls through the web page
 function moveCamera(){
@@ -134,6 +140,15 @@ function moveCamera(){
   sun.rotation.x += 0.5;
   sun.rotation.y += 0.075;
   sun.rotation.z += 0.05;
+
+  mercury.rotation.x += 0.5;
+  mercury.rotation.y += 0.075;
+  mercury.rotation.z += 0.05;
+
+
+  venus.rotation.x += 0.5;
+  venus.rotation.y += 0.075;
+  venus.rotation.z += 0.05;
 
   camera.position.z = t * -0.01;
   camera.position.x = t * -0.0002;
