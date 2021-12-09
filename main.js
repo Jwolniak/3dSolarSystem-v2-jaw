@@ -47,67 +47,67 @@ scene.background = spaceTexture;
 
 const sunTexture = new THREE.TextureLoader().load('sun.jpg');
 const sun = new THREE.Mesh(
-  new THREE.SphereGeometry(8, 32, 32),
+  new THREE.SphereGeometry(5, 32, 32),
   new THREE.MeshStandardMaterial({map: sunTexture})
 );
 
 const mercuryTexture = new THREE.TextureLoader().load('mercury.jpg');
 const mercury = new THREE.Mesh(
-  new THREE.SphereGeometry(3, 32, 32),
+  new THREE.SphereGeometry(2, 32, 32),
   new THREE.MeshStandardMaterial({map: mercuryTexture})
 );
 
 const venusTexture = new THREE.TextureLoader().load('venus.jpg');
 const venus = new THREE.Mesh(
-  new THREE.SphereGeometry(4, 32, 32),
+  new THREE.SphereGeometry(3, 32, 32),
   new THREE.MeshStandardMaterial({map: venusTexture})
 );
 
 const earthTexture = new THREE.TextureLoader().load('earth.jpg');
 const earth = new THREE.Mesh(
-  new THREE.SphereGeometry(5, 32, 32),
+  new THREE.SphereGeometry(4, 32, 32),
   new THREE.MeshStandardMaterial({map: earthTexture})
 );
 
 const moonTexture = new THREE.TextureLoader().load('moon.jpg');
 const moon = new THREE.Mesh(
-  new THREE.SphereGeometry(4, 32, 32),
+  new THREE.SphereGeometry(1, 32, 32),
   new THREE.MeshStandardMaterial({map: moonTexture})
 );
 
 const marsTexture = new THREE.TextureLoader().load('mars.jpg');
 const mars = new THREE.Mesh(
-  new THREE.SphereGeometry(5, 32, 32),
+  new THREE.SphereGeometry(3, 32, 32),
   new THREE.MeshStandardMaterial({map: marsTexture})
 );
 
 const jupiterTexture = new THREE.TextureLoader().load('jupiter.jpg');
 const jupiter = new THREE.Mesh(
-  new THREE.SphereGeometry(7, 32, 32),
+  new THREE.SphereGeometry(5, 32, 32),
   new THREE.MeshStandardMaterial({map: jupiterTexture})
 );
 
 const saturnTexture = new THREE.TextureLoader().load('saturn.jpg');
 const saturn = new THREE.Mesh(
-  new THREE.SphereGeometry(6, 32, 32),
+  new THREE.SphereGeometry(4, 32, 32),
   new THREE.MeshStandardMaterial({map: saturnTexture})
 );
 
 const uranusTexture = new THREE.TextureLoader().load('uranus.jpg');
 const uranus = new THREE.Mesh(
-  new THREE.SphereGeometry(5, 32, 32),
+  new THREE.SphereGeometry(3, 32, 32),
   new THREE.MeshStandardMaterial({map: uranusTexture})
 );
 
 const neptuneTexture = new THREE.TextureLoader().load('neptune.jpg');
 const neptune = new THREE.Mesh(
-  new THREE.SphereGeometry(5, 32, 32),
+  new THREE.SphereGeometry(3, 32, 32),
   new THREE.MeshStandardMaterial({map: neptuneTexture})
 );
 
 const plutoTexture = new THREE.TextureLoader().load('pluto.jpg');
 const pluto = new THREE.Mesh(
-  new THREE.SphereGeometry(4, 32, 32),
+  new THREE.SphereGeometry(2, 32, 32),
   new THREE.MeshStandardMaterial({map: plutoTexture})
 );
 
@@ -115,9 +115,9 @@ const pluto = new THREE.Mesh(
 scene.add(sun);
 scene.add(mercury);
 scene.add(venus);
-//scene.add(earth);
-//scene.add(moon);
-//scene.add(mars);
+scene.add(earth);
+scene.add(moon);
+scene.add(mars);
 //scene.add(jupiter);
 //scene.add(saturn);
 //scene.add(uranus);
@@ -125,15 +125,23 @@ scene.add(venus);
 //scene.add(pluto);
 
 //setting object positions to make it appear as the user scrolls
-sun.position.z = 5;
+sun.position.z = 1;
 sun.position.setX(-10);
 
-mercury.position.z = 15;
+mercury.position.z = 8;
 mercury.position.setX(-10);
 
-venus.position.z = 25;
+venus.position.z = 14;
 venus.position.setX(-10);
 
+earth.position.z = 19;
+earth.position.setX(-10);
+
+moon.position.z = 25;
+moon.position.setX(-7);
+
+mars.position.z = 28;
+mars.position.setX(-10);
 //this function moves the camera so that the object looks as though it is moving while the user scrolls through the web page
 function moveCamera(){
   const t = document.body.getBoundingClientRect().top;
