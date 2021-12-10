@@ -45,6 +45,8 @@ Array(150).fill().forEach(addStars);
 const spaceTexture = new THREE.TextureLoader().load('space.jpg');
 scene.background = spaceTexture;
 
+
+//creates the object and applies the picture to the object
 const sunTexture = new THREE.TextureLoader().load('sun.jpg');
 const sun = new THREE.Mesh(
   new THREE.SphereGeometry(5, 32, 32),
