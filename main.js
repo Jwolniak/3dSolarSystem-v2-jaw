@@ -59,13 +59,13 @@ const mercury = new THREE.Mesh(
 
 const venusTexture = new THREE.TextureLoader().load('venus.jpg');
 const venus = new THREE.Mesh(
-  new THREE.SphereGeometry(3, 32, 32),
+  new THREE.SphereGeometry(2, 32, 32),
   new THREE.MeshStandardMaterial({map: venusTexture})
 );
 
 const earthTexture = new THREE.TextureLoader().load('earth.jpg');
 const earth = new THREE.Mesh(
-  new THREE.SphereGeometry(4, 32, 32),
+  new THREE.SphereGeometry(3, 32, 32),
   new THREE.MeshStandardMaterial({map: earthTexture})
 );
 
@@ -77,37 +77,37 @@ const moon = new THREE.Mesh(
 
 const marsTexture = new THREE.TextureLoader().load('mars.jpg');
 const mars = new THREE.Mesh(
-  new THREE.SphereGeometry(3, 32, 32),
+  new THREE.SphereGeometry(2, 32, 32),
   new THREE.MeshStandardMaterial({map: marsTexture})
 );
 
 const jupiterTexture = new THREE.TextureLoader().load('jupiter.jpg');
 const jupiter = new THREE.Mesh(
-  new THREE.SphereGeometry(5, 32, 32),
+  new THREE.SphereGeometry(4, 32, 32),
   new THREE.MeshStandardMaterial({map: jupiterTexture})
 );
 
 const saturnTexture = new THREE.TextureLoader().load('saturn.jpg');
 const saturn = new THREE.Mesh(
-  new THREE.SphereGeometry(4, 32, 32),
+  new THREE.SphereGeometry(3, 32, 32),
   new THREE.MeshStandardMaterial({map: saturnTexture})
 );
 
 const uranusTexture = new THREE.TextureLoader().load('uranus.jpg');
 const uranus = new THREE.Mesh(
-  new THREE.SphereGeometry(3, 32, 32),
+  new THREE.SphereGeometry(2, 32, 32),
   new THREE.MeshStandardMaterial({map: uranusTexture})
 );
 
 const neptuneTexture = new THREE.TextureLoader().load('neptune.jpg');
 const neptune = new THREE.Mesh(
-  new THREE.SphereGeometry(3, 32, 32),
+  new THREE.SphereGeometry(2, 32, 32),
   new THREE.MeshStandardMaterial({map: neptuneTexture})
 );
 
 const plutoTexture = new THREE.TextureLoader().load('pluto.jpg');
 const pluto = new THREE.Mesh(
-  new THREE.SphereGeometry(2, 32, 32),
+  new THREE.SphereGeometry(1, 32, 32),
   new THREE.MeshStandardMaterial({map: plutoTexture})
 );
 
@@ -118,11 +118,11 @@ scene.add(venus);
 scene.add(earth);
 scene.add(moon);
 scene.add(mars);
-//scene.add(jupiter);
-//scene.add(saturn);
-//scene.add(uranus);
-//scene.add(neptune);
-//scene.add(pluto);
+scene.add(jupiter);
+scene.add(saturn);
+scene.add(uranus);
+scene.add(neptune);
+scene.add(pluto);
 
 //setting object positions to make it appear as the user scrolls
 sun.position.z = 1;
@@ -141,7 +141,22 @@ moon.position.z = 25;
 moon.position.setX(-7);
 
 mars.position.z = 28;
-mars.position.setX(-10);
+mars.position.setX(-9);
+
+jupiter.position.z = 35;
+jupiter.position.setX(-11);
+
+saturn.position.z = 35;
+saturn.position.setX(11);
+
+uranus.position.z = 39;
+uranus.position.setX(11);
+
+neptune.position.z = 43;
+neptune.position.setX(11);
+
+pluto.position.z = 46;
+pluto.position.setX(11);
 //this function moves the camera so that the object looks as though it is moving while the user scrolls through the web page
 function moveCamera(){
   const t = document.body.getBoundingClientRect().top;
@@ -157,6 +172,38 @@ function moveCamera(){
   venus.rotation.x += 0.5;
   venus.rotation.y += 0.075;
   venus.rotation.z += 0.05;
+
+  earth.rotation.x += 0.5;
+  earth.rotation.y += 0.075;
+  earth.rotation.z += 0.05;
+
+  moon.rotation.x += 0.5;
+  moon.rotation.y += 0.075;
+  moon.rotation.z += 0.05;
+
+  mars.rotation.x += 0.5;
+  mars.rotation.y += 0.075;
+  mars.rotation.z += 0.05;
+
+  jupiter.rotation.x += 0.5;
+  jupiter.rotation.y += 0.075;
+  jupiter.rotation.z += 0.05;
+
+  saturn.rotation.x += 0.5;
+  saturn.rotation.y += 0.075;
+  saturn.rotation.z += 0.05;
+
+  uranus.rotation.x += 0.5;
+  uranus.rotation.y += 0.075;
+  uranus.rotation.z += 0.05;
+
+  neptune.rotation.x += 0.5;
+  neptune.rotation.y += 0.075;
+  neptune.rotation.z += 0.05;
+
+  pluto.rotation.x += 0.5;
+  pluto.rotation.y += 0.075;
+  pluto.rotation.z += 0.05;
 
   camera.position.z = t * -0.01;
   camera.position.x = t * -0.0002;
